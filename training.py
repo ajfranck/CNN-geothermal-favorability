@@ -43,5 +43,5 @@ for t in range(EPOCHS):
 print(f"Final Accuracy: {(test_acc):>0.1f}%")
 plt.savefig('training.png')
 
-save_path = 'model.pth'
+save_path = 'saved_model/model.pth'
 torch.save(model.state_dict(), save_path)
