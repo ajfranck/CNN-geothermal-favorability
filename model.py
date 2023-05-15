@@ -1,8 +1,10 @@
 import torch.nn as nn
 from imports import *
 
+theta_deg = 180
+
 transform1 = transforms.Compose([
-    #transforms.RandomRotation(90),
+    transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
     transforms.RandomHorizontalFlip(0.95)
 ])
 
