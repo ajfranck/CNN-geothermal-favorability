@@ -40,12 +40,12 @@ transform1 = transforms.Compose([
     transforms.RandomHorizontalFlip(0.95)
 ])
 #scripted_transform = torch.jit.script(transform1)
-X_train_random = transform1(X_train)
+# X_train_random = transform1(X_train)
 
 
 #concatenate new data and original
-X_train = torch.cat((X_train, X_train_random))
-y_train = torch.cat((y_train, y_train))
+# X_train = torch.cat((X_train, X_train_random))
+# y_train = torch.cat((y_train, y_train))
 
 
 class ImageDataset:

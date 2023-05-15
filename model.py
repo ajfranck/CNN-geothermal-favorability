@@ -1,7 +1,14 @@
 import torch.nn as nn
+from imports import *
+
+transform1 = transforms.Compose([
+    #transforms.RandomRotation(90),
+    transforms.RandomHorizontalFlip(0.95)
+])
 
 def nin_block(out_channels, kernel_size, strides, padding):
     return nn.Sequential(
+        transform1,
         nn.LazyConv2d(out_channels, kernel_size, strides, padding), nn.ReLU(),
         nn.LazyConv2d(out_channels, kernel_size=1), nn.ReLU(),
         nn.LazyConv2d(out_channels, kernel_size=1), 
