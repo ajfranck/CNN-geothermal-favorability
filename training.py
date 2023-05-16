@@ -5,10 +5,10 @@ from imports import *
 
 # define training hyperparameters
 INIT_LR = 1e-3
-EPOCHS = 100
+EPOCHS = 50
 
 
-model = model(lr=INIT_LR).to(device)
+model = NiN(lr=INIT_LR).to(device)
 
 # initialize weights, requires forward pass for Lazy layers
 X = next(iter(train_dataloader))[0].to(device)    # get a batch from dataloader

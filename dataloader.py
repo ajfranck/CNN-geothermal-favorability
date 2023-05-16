@@ -4,7 +4,7 @@ from imports import *
 TRAIN_SPLIT = 0.8
 VAL_SPLIT = 1 - TRAIN_SPLIT
 
-BATCH_SIZE = 10
+BATCH_SIZE = 20
 
 #create list of length
 
@@ -51,26 +51,34 @@ for i in range(len(y_train)):
         y_train[i] = 2
     else:
         y_train[i] = 3
+for i in range(len(y_valid)):
+    if y_valid[i] <= 25:
+        y_valid[i] = 0
+    elif y_valid[i] <= 50:
+        y_valid[i] = 1
+    elif y_valid[i] <= 200:
+        y_valid[i] = 2
+    else:
+        y_valid[i] = 3
 
 #apply transform to data
-theta_deg = 180
+theta_deg = 90
 
 transform1 = transforms.Compose([
     transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
     transforms.RandomHorizontalFlip(0.5),
-    #transforms.AutoAugment()
 ])
 
 
 #concatenate new data and original
-for i in range(5):
+for i in range(2):
     X_train_random = transform1(X_train)
     X_train = torch.cat((X_train, X_train_random))
     y_train = torch.cat((y_train, y_train))
 
 #normalize data
-# X_train = X_train/255
-# X_test = X_test/255
+X_train = X_train/255
+X_valid = X_valid/255
 
 class ImageDataset:
     def __init__(self, images, labels):
@@ -83,16 +91,6 @@ class ImageDataset:
 
 dataset_train = ImageDataset(X_train, y_train)
 dataset_val = ImageDataset(X_valid, y_valid)
-
-
-# numTrainSamples = math.ceil(len(dataset) * TRAIN_SPLIT)
-# numValSamples = int(len(dataset) * VAL_SPLIT)
-
-# (train_set, val_set) = torch.utils.data.random_split(X_train,
-#     [numTrainSamples, numValSamples],
-# 	generator=torch.Generator().manual_seed(42))
-
-#apply transform to data
 
 
 #create dataloaders
