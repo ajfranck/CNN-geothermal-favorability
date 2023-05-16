@@ -35,18 +35,26 @@ for i in range(len(y_train)):
         y_train[i] = 3
 
 #apply transform to data
+theta_deg = 180
+
 transform1 = transforms.Compose([
-    #transforms.RandomRotation(90),
+    transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
     transforms.RandomHorizontalFlip(0.95)
 ])
 #scripted_transform = torch.jit.script(transform1)
-# X_train_random = transform1(X_train)
+X_train_random = transform1(X_train)
 
 
 #concatenate new data and original
-# X_train = torch.cat((X_train, X_train_random))
-# y_train = torch.cat((y_train, y_train))
+for i in range(5):
+    X_train = torch.cat((X_train, X_train_random))
+    y_train = torch.cat((y_train, y_train))
 
+#normalize data
+# X_train = X_train/255
+# X_test = X_test/255
+
+print('joe mama')
 
 class ImageDataset:
     def __init__(self, images, labels):
