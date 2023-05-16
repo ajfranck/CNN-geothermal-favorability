@@ -4,17 +4,35 @@ from imports import *
 TRAIN_SPLIT = 0.8
 VAL_SPLIT = 1 - TRAIN_SPLIT
 
-
 BATCH_SIZE = 10
+
+#create list of length
 
 # Open training data and load
 file = h5py.File("data/DEM_train.h5", "r+")
 X_train = np.array(file["/images"])
 y_train = np.array(file["/meta"])
 file.close()
+
+train_idx = np.arange(0,222)
+np.random.shuffle(train_idx)
+valid_idx = train_idx[0:int(TRAIN_SPLIT*len(train_idx))]
+train_idx = train_idx[int(TRAIN_SPLIT*len(train_idx)):len(train_idx)]
+
+X_valid = X_train[valid_idx,:,:]
+y_valid = y_train[valid_idx]
+
+X_train = X_train[train_idx,:,:]
+y_train = y_train[train_idx]
+
 X_train = X_train[:,None,:,:]
-X_train = torch.tensor(X_train)
-y_train = torch.tensor(y_train)
+X_valid = X_valid[:,None,:,:]
+
+
+X_train = torch.tensor(X_train)#.to(torch.uint8)
+y_train = torch.tensor(y_train)#.to(torch.uint8)
+X_valid = torch.tensor(X_valid)#.to(torch.uint8)
+y_valid = torch.tensor(y_valid)#.to(torch.uint8)
 
 # Open test data and load
 file = h5py.File("data/DEM_test_features.h5", "r+")
@@ -39,22 +57,20 @@ theta_deg = 180
 
 transform1 = transforms.Compose([
     transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
-    transforms.RandomHorizontalFlip(0.95)
+    transforms.RandomHorizontalFlip(0.5),
+    #transforms.AutoAugment()
 ])
-#scripted_transform = torch.jit.script(transform1)
-X_train_random = transform1(X_train)
 
 
 #concatenate new data and original
 for i in range(5):
+    X_train_random = transform1(X_train)
     X_train = torch.cat((X_train, X_train_random))
     y_train = torch.cat((y_train, y_train))
 
 #normalize data
 # X_train = X_train/255
 # X_test = X_test/255
-
-print('joe mama')
 
 class ImageDataset:
     def __init__(self, images, labels):
@@ -65,23 +81,27 @@ class ImageDataset:
     def __getitem__(self, index):
         return self.X[index, :, :, :], self.y[index]
 
-dataset = ImageDataset(X_train, y_train)
+dataset_train = ImageDataset(X_train, y_train)
+dataset_val = ImageDataset(X_valid, y_valid)
 
-numTrainSamples = math.ceil(len(dataset) * TRAIN_SPLIT)
-numValSamples = int(len(dataset) * VAL_SPLIT)
 
-(train_set, val_set) = torch.utils.data.random_split(dataset,
-    [numTrainSamples, numValSamples],
-	generator=torch.Generator().manual_seed(42))
+# numTrainSamples = math.ceil(len(dataset) * TRAIN_SPLIT)
+# numValSamples = int(len(dataset) * VAL_SPLIT)
+
+# (train_set, val_set) = torch.utils.data.random_split(X_train,
+#     [numTrainSamples, numValSamples],
+# 	generator=torch.Generator().manual_seed(42))
+
+#apply transform to data
 
 
 #create dataloaders
 train_dataloader = torch.utils.data.DataLoader(
-    dataset = train_set,
+    dataset = dataset_train,
     batch_size = BATCH_SIZE,
     shuffle = True)
 
 val_dataloader = torch.utils.data.DataLoader(
-    dataset = val_set,
+    dataset = dataset_val,
     batch_size = BATCH_SIZE,
     shuffle = True)
