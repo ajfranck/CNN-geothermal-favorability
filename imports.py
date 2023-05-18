@@ -10,3 +10,5 @@ from torch.utils.data import Dataset, DataLoader
 
 
 device = torch.device('cuda')# if torch.cuda.is_available() else 'cpu')
+
+MODEL_TYPE = 'classification'

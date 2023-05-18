@@ -10,12 +10,12 @@ transform1 = transforms.Compose([
 def train_loop(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
     for i, (X, y) in enumerate(dataloader):
-        y = y.type(torch.int64)
+        if(MODEL_TYPE == 'classification'): y = y.type(torch.int64)
         X = X.to(device)
         y = y.to(device)
         # Compute prediction and loss
         pred = model(X)
-        loss = loss_fn(pred, y)
+        loss = loss_fn(pred, y).to(torch.float64)
 
         # Backpropagation
         optimizer.zero_grad()

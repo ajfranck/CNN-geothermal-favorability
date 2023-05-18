@@ -40,24 +40,25 @@ X_test = torch.tensor(X_test)
 file.close()
 
 #classify the y values
-for i in range(len(y_train)):
-    if y_train[i] <= 25:
-        y_train[i] = 0
-    elif y_train[i] <= 50:
-        y_train[i] = 1
-    elif y_train[i] <= 200:
-        y_train[i] = 2
-    else:
-        y_train[i] = 3
-for i in range(len(y_valid)):
-    if y_valid[i] <= 25:
-        y_valid[i] = 0
-    elif y_valid[i] <= 50:
-        y_valid[i] = 1
-    elif y_valid[i] <= 200:
-        y_valid[i] = 2
-    else:
-        y_valid[i] = 3
+if(MODEL_TYPE == 'classification'):
+    for i in range(len(y_train)):
+        if y_train[i] <= 25:
+            y_train[i] = 0
+        elif y_train[i] <= 50:
+            y_train[i] = 1
+        elif y_train[i] <= 200:
+            y_train[i] = 2
+        else:
+            y_train[i] = 3
+    for i in range(len(y_valid)):
+        if y_valid[i] <= 25:
+            y_valid[i] = 0
+        elif y_valid[i] <= 50:
+            y_valid[i] = 1
+        elif y_valid[i] <= 200:
+            y_valid[i] = 2
+        else:
+            y_valid[i] = 3
 
 
 class ImageDataset:

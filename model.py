@@ -1,6 +1,7 @@
 import torch.nn as nn
 from torchvision import transforms
 from torch.nn import functional as F
+from imports import MODEL_TYPE
 
 theta_deg = 180
 
@@ -19,24 +20,42 @@ def nin_block(out_channels, kernel_size, strides, padding):
         nn.ReLU())
 
 class NiN(nn.Module):
-    def __init__(self, lr=0.01, num_classes=4):
-        super().__init__()
-        #self.save_hyperparameters()
-        self.net = nn.Sequential(
-            nin_block(96, kernel_size=5, strides=3, padding=0),
-            nn.Dropout(0.2),
-            nn.MaxPool2d(3, stride=2),
-            nin_block(256, kernel_size=3, strides=1, padding=2),
-            nn.Dropout(0.2),
-            nn.MaxPool2d(3, stride=2),
-            nin_block(384, kernel_size=3, strides=1, padding=1),
-            nn.Dropout(0.2),
-            nn.MaxPool2d(3, stride=2),
-            nin_block(num_classes, kernel_size=3, strides=1, padding=1),
-            nn.Dropout(0.2),
-            nn.AdaptiveAvgPool2d((1, 1)),
-            nn.Flatten())
-
+    if(MODEL_TYPE == 'regression'):
+        def __init__(self, lr=0.01, num_classes=1):
+            super().__init__()
+            #self.save_hyperparameters()
+            self.net = nn.Sequential(
+                nin_block(96, kernel_size=5, strides=3, padding=0),
+                nn.Dropout(0.2),
+                nn.MaxPool2d(3, stride=2),
+                nin_block(256, kernel_size=3, strides=1, padding=2),
+                nn.Dropout(0.2),
+                nn.MaxPool2d(3, stride=2),
+                nin_block(384, kernel_size=3, strides=1, padding=1),
+                nn.Dropout(0.2),
+                nn.MaxPool2d(3, stride=2),
+                nin_block(num_classes, kernel_size=3, strides=1, padding=1),
+                nn.Dropout(0.2),
+                nn.AdaptiveAvgPool2d((1, 1)),
+                nn.Flatten())
+    else:
+        def __init__(self, lr=0.01, num_classes=4):
+            super().__init__()
+            #self.save_hyperparameters()
+            self.net = nn.Sequential(
+                nin_block(96, kernel_size=5, strides=3, padding=0),
+                nn.Dropout(0.2),
+                nn.MaxPool2d(3, stride=2),
+                nin_block(256, kernel_size=3, strides=1, padding=2),
+                nn.Dropout(0.2),
+                nn.MaxPool2d(3, stride=2),
+                nin_block(384, kernel_size=3, strides=1, padding=1),
+                nn.Dropout(0.2),
+                nn.MaxPool2d(3, stride=2),
+                nin_block(num_classes, kernel_size=3, strides=1, padding=1),
+                nn.Dropout(0.2),
+                nn.AdaptiveAvgPool2d((1, 1)),
+                nn.Flatten())
         
     def forward(self, x):
         return self.net(x)

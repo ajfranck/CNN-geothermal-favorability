@@ -6,7 +6,7 @@ from torchcam.methods import SmoothGradCAMpp
 from torchvision.transforms.functional import to_pil_image
 
 
-NUMBER = 0
+NUMBER = 1
 INIT_LR = 1e-3
 
 file = h5py.File("data/DEM_train.h5", "r+")
@@ -51,9 +51,11 @@ plt.subplot(1,2,1)
 # code to plot the saliency map as a heatmap
 plt.imshow(torch.Tensor.cpu(saliency[0]), cmap=plt.cm.hot)
 plt.axis('off')
+plt.suptitle('Saliency map, incorrect prediction')
 plt.savefig('saliency.png')
 
 plt.subplot(1,2,2)
 plt.imshow(saved_img)
 plt.axis('off')
+#title for both
 plt.show()
