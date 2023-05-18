@@ -1,6 +1,11 @@
 from dataloader import *
 from imports import *
 
+theta_deg = 60
+transform1 = transforms.Compose([
+    transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
+    transforms.RandomHorizontalFlip(0.5),
+])
 
 def train_loop(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)

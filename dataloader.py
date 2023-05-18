@@ -6,8 +6,6 @@ VAL_SPLIT = 1 - TRAIN_SPLIT
 
 BATCH_SIZE = 20
 
-#create list of length
-
 # Open training data and load
 file = h5py.File("data/DEM_train.h5", "r+")
 X_train = np.array(file["/images"])
@@ -61,24 +59,6 @@ for i in range(len(y_valid)):
     else:
         y_valid[i] = 3
 
-#apply transform to data
-theta_deg = 90
-
-transform1 = transforms.Compose([
-    transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
-    transforms.RandomHorizontalFlip(0.5),
-])
-
-
-#concatenate new data and original
-for i in range(2):
-    X_train_random = transform1(X_train)
-    X_train = torch.cat((X_train, X_train_random))
-    y_train = torch.cat((y_train, y_train))
-
-#normalize data
-X_train = X_train/255
-X_valid = X_valid/255
 
 class ImageDataset:
     def __init__(self, images, labels):
@@ -91,7 +71,6 @@ class ImageDataset:
 
 dataset_train = ImageDataset(X_train, y_train)
 dataset_val = ImageDataset(X_valid, y_valid)
-
 
 #create dataloaders
 train_dataloader = torch.utils.data.DataLoader(

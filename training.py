@@ -7,6 +7,9 @@ from imports import *
 INIT_LR = 1e-3
 EPOCHS = 50
 
+#apply transform to data
+theta_deg = 90
+
 
 model = NiN(lr=INIT_LR).to(device)
 
@@ -43,5 +46,5 @@ for t in range(EPOCHS):
 print(f"Final Accuracy: {(test_acc):>0.1f}%")
 plt.savefig('training.png')
 
-save_path = 'saved_model/model.pth'
+save_path = 'MODEL/model.pth'
 torch.save(model.state_dict(), save_path)
