@@ -18,8 +18,7 @@ X = next(iter(train_dataloader))[0].to(device)    # get a batch from dataloader
 model.forward(X)                       # apply forward pass
 model.apply(init_weights)              # apply initialization
 
-if(MODEL_TYPE == 'classification'): loss_fn = nn.CrossEntropyLoss()
-else: loss_fn = nn.MSELoss()
+loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 
 
