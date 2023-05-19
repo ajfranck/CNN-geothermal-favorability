@@ -5,7 +5,7 @@ from imports import *
 
 # define training hyperparameters
 INIT_LR = 1e-3
-EPOCHS = 50
+EPOCHS = 100
 
 #apply transform to data
 theta_deg = 90

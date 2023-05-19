@@ -1,23 +1,25 @@
 # Fdb version 4
-["bibtex writeup"] 1684235814 "writeup.aux" "writeup.bbl" "writeup" 1684235814 0
+["bibtex writeup"] 1684463204 "writeup.aux" "writeup.bbl" "writeup" 1684463204 0
   "bibliography.bib" 0 -1 0 ""
   "c:/texlive/2022/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1672790412 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "writeup.aux" 1684235813 597 136ef4138a2af0c0c1001948e5118b2d "pdflatex"
+  "writeup.aux" 1684463203 597 cdb23781906a411cea9b34122dc98159 "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1684235812 "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" "writeup.pdf" "writeup" 1684235814 0
-  "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" 1684235803 3442 712ee2b682ebb48723456ae01d8111f1 ""
+["pdflatex"] 1684463202 "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" "writeup.pdf" "writeup" 1684463204 0
+  "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" 1684463189 6703 4a7dfc1f60fb5facc8733bedc14c836e ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1672790127 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1672789570 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1672789570 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1672789570 1288 655e228510b4c2a1abe905c368440826 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm" 1672789570 1508 efecb4a315fe0975509670a272d75ef5 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1672789570 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1672789132 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1672789132 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1672789132 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1672789132 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb" 1672789132 35022 e40946b20bfdcd1099eafb2bcd9f25dd ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1672789132 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1672791007 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2022/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1672789210 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -83,10 +85,13 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1672792539 4662777 47d999f891270c1ec2e3f69191e4532c ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1672792727 7874776 f99d76aa1098cc457dcfae35d35efac0 ""
   "c:/texlive/2022/texmf.cnf" 1672792520 713 e69b156964470283e0530f5060668171 ""
-  "writeup.aux" 1684235813 597 136ef4138a2af0c0c1001948e5118b2d "pdflatex"
+  "images/basic_model.png" 1684462667 61141 d691acbfc496f3d4078233de303c2056 ""
+  "images/basic_model_augmented.png" 1684463122 59774 6814dbc31a11dbf2508fa5a89dcbf07b ""
+  "images/model_augmented_dropout.png" 1684463108 57710 e354b6d87d973be55e1894b8f2420e15 ""
+  "writeup.aux" 1684463203 597 cdb23781906a411cea9b34122dc98159 "pdflatex"
   "writeup.bbl" 0 -1 0 "bibtex writeup"
-  "writeup.out" 1684235812 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "writeup.tex" 1684235803 3442 712ee2b682ebb48723456ae01d8111f1 ""
+  "writeup.out" 1684463203 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "writeup.tex" 1684463189 6703 4a7dfc1f60fb5facc8733bedc14c836e ""
   (generated)
   "writeup.aux"
   "writeup.log"

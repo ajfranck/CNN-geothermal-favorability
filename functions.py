@@ -12,7 +12,7 @@ def train_loop(dataloader, model, loss_fn, optimizer):
     size = len(dataloader.dataset)
     for i, (X, y) in enumerate(dataloader):
         y = y.type(torch.int64)
-        X = X.to(device)
+        X = transform1(X.to(device))
         y = y.to(device)
         # Compute prediction and loss
         pred = model(X)
