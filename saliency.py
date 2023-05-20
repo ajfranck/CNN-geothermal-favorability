@@ -2,9 +2,6 @@ from imports import *
 # from training import INIT_LR
 from model import *
 from dataloader import *
-from torchcam.methods import SmoothGradCAMpp
-from torchvision.transforms.functional import to_pil_image
-
 
 NUMBER = 1
 INIT_LR = 1e-3

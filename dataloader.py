@@ -12,6 +12,9 @@ X_train = np.array(file["/images"])
 y_train = np.array(file["/meta"])
 file.close()
 
+#normalize X_train
+X_train = X_train/np.max(X_train)
+
 train_idx = np.arange(0,222)
 np.random.shuffle(train_idx)
 valid_idx = train_idx[0:int(TRAIN_SPLIT*len(train_idx))]
@@ -19,13 +22,14 @@ train_idx = train_idx[int(TRAIN_SPLIT*len(train_idx)):len(train_idx)]
 
 X_valid = X_train[valid_idx,:,:]
 y_valid = y_train[valid_idx]
+saved_x_valid = X_valid
+saved_y_valid = y_valid
 
 X_train = X_train[train_idx,:,:]
 y_train = y_train[train_idx]
 
 X_train = X_train[:,None,:,:]
 X_valid = X_valid[:,None,:,:]
-
 
 X_train = torch.tensor(X_train)#.to(torch.uint8)
 y_train = torch.tensor(y_train)#.to(torch.uint8)

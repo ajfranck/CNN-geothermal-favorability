@@ -106,49 +106,92 @@
 
 \section*{Problem Description}
 
+\indent
 The objective of this project is to first train a Convolutional Neural Network capable of accurately categorizing geothermal heat flow residuals into one of four disctinct classes. After categorizing, the model will be studied using guided backpropogation to determine whether the trained model is utilizing certain structural settings to make its predictions (i.e. changes in elevation and topography). \\
+\indent
 The model will be trained on a detrended elevation map, partitioned into 222, 200x200 pixel images. For each patch, the label is the maximum residual value among all wells in the patch.\\
+\indent
 Although it would be convenient for the model to accurately predict a high percentage of labels, it is unlikely to happen with the limited data size. This report aims to develop a model that can accurately predict the labels with a reasonable degree of accuracy, and then analyze the model's behavior to determine whether it is utilizing the desired structural features to make its predictions.\\
+\indent
 Even without perfect model accuracy, the model can still be useful in determining what topographic features are most useful for predicting geothermal heat flow. This will lead to a better understanding of the relationship between topography and geothermal heat flow, and will help to inform future research.\\
 
 
 \section*{Exploratory Data Analysis}
 
-Because of the nature of the data, it was not necessary to perform much data analysis. 
+Because of the nature of the data, it was not necessary to perform much data analysis. Most of the data analysis was performed in the data preprocessing step.\\
+\indent
+Firstly, the image data was considered and it was noted that some of the image values were not in the range $[0,255]$. Because of this, the image data was normalized, which resulted in a slight ~1.2\% increase in accuracy:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        Range & min & max \\
+        Before Normalization & -1037.89 & 2596.36 \\
+        After Normalization & -0.3997 & 1 \\
+    \end{tabular}
+\end{center}
+
+\indent
+A few different image augmentation methods were considered. The first method was to simply flip the images horizontally and vertically. This was done to increase the data size, and to make the model more robust to different orientations of the same topography.\\
+\indent
+Secondly, the images were rotated a random amount between 0 and 90 degrees, in another effort to increase data size and increase robustness. Random image noise was also applied to the images, however this did not appear to make any difference.\\
+\indent
+Finally, the dataset contained some images that contained very little data. These images were negatively impacting the model's ability to learn, so they were removed from the dataset. This resulted in an average 2.3\% increase in accuracy.\\
 
 
 \section*{Challenges}
 
+\indent
 The largest challenge of the project was the limited data size. With only 222 images, it was very difficult to make a model train properly and accurately predict labels. This was especially true when using a CNN, which requires a large amount of data.\\
 
 
 \section*{Approach}
 
+\indent
 The initial step in devlopment involved developing a baseline Network in Network model as described in the d2l textbook. This initial model was used to determine whether the data was being processed correctly, and to determine whether the model was capable of learning. This model was trained for 100 epochs, and overfit the data considerably: \\
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/basic_model.png}
 \end{center}
 
+\indent
 The model also did not appear to be learning very well at all. The loss function was not decreasing, and the accuracy was not increasing. This was likely due to the small data size.\\
 
+\indent
 To artifically increase the data size, image augmentation was utilized via the torchvision.transforms library. This library allows for the creation of a transform object that can be applied to a dataset. The transform object contained both random flips and rotations at random degrees. The transform was applied after loading each batch at the start of the training loop, so that each batch was augmented differently. After applying the transform, the model appeared to train slightly better, but still did not appear to be learning very well:\\
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/basic_model_augmented.png}
 \end{center}
 
+\indent
 The model still appeared to be overfitting, so dropout was added after each Network in Network block. This helped to reduce the overfitting, however the model did not improve in accuracy much:\\
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/model_augmented_dropout.png}
 \end{center}
+\indent
+Because of the lack of data, it was decided that increasing the complexity of the model would not be benificial. The final model appears as follows, and was trained for 100 epochs at a 0.01 learning rate:
 
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/model_code.png}
+\end{center}
+
+% Therefore, the model was kept as-is and was trained for 100 epochs. The final accuracy was 37\% over all four classes, and 66\% for binary classification. The model was then saved and used for the guided backpropogation analysis.\\
+\indent
+Saliency maps of the model were generated using guided backpropogation. A hook was added to every ReLU activation layer in the network, and then the model was run on a single image. The gradients were then calculated at the output layer with respect to the input image.
 
 \section*{Evaluation and Summary}
 
 
+
+Unfortunately, the model did not have a high accuracy. The final accuracy was 37\% over all four classes, and 66\% for binary classification.
+
+\indent
+
+
 \section*{What I Learned}
+
+This project was an excellent introduction to image processing using convolutional neural networks. Having already developed basic models to analyze features, this project was a great way to delve deeper into more complex neural network methods. The 
 
 
 \bibliographystyle{IEEEtran}
