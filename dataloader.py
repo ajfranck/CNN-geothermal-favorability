@@ -74,8 +74,8 @@ class ImageDataset:
     def __getitem__(self, index):
         return self.X[index, :, :, :], self.y[index]
 
-dataset_train = ImageDataset(X_train, y_train)
-dataset_val = ImageDataset(X_valid, y_valid)
+dataset_val = ImageDataset(X_train, y_train)
+dataset_train = ImageDataset(X_valid, y_valid)
 
 #create dataloaders
 train_dataloader = torch.utils.data.DataLoader(

@@ -8,15 +8,37 @@ model.load_state_dict(torch.load('MODEL/model.pth'))
 model.eval()
 
 #test if model is correct by predicting
-scores = np.zeros(len(saved_x_valid))
+dataloader = val_dataloader
 
-for i in range(len(saved_x_valid)):
-    scores[i] = model(saved_x_valid[i,:,:])
+size = len(dataloader.dataset)
+num_batches = len(dataloader)
+saved_pred = np.zeros(size)
+saved_labels = np.zeros(size)
 
-labels = saved_y_valid
+with torch.no_grad():
+    for X, y in dataloader:
+        #save the labels
+        X = X.to(device)
+        pred = model(X)
+        for i in range(len(y)): 
+            saved_labels[i] = y[i]
+            saved_pred[i] = pred[i].argmax(0)
 
-#compare labels to scores using abs(labels - scores)
-def accuracy(y_hat, y):
-    return np.abs(y_hat - y).mean()
 
-print("Accuracy: ", accuracy(scores, labels))
+labels = saved_labels
+scores = saved_pred
+
+import seaborn as sns
+import pandas as pd
+from sklearn.metrics import confusion_matrix
+
+idx2class = {0: '0-25', 1: '25-50', 2: '50-200', 3: '200+'}
+
+confusion_matrix_df = pd.DataFrame(confusion_matrix(y_train, scores)).rename(columns=idx2class, index=idx2class)
+
+plt.figure(figsize=(10,8))
+sns.heatmap(confusion_matrix_df, annot=True, fmt="d")
+plt.title("Confusion Matrix")
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
+plt.savefig('confusion_matrix.png')

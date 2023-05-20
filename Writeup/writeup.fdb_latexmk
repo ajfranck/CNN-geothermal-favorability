@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex writeup"] 1684577631 "writeup.aux" "writeup.bbl" "writeup" 1684577634 0
-  "./bibliography.bib" 1684576743 685 f90e685ed69b5cef630acb18c8afea08 ""
+["bibtex writeup"] 0 "writeup.aux" "writeup.bbl" "writeup" 1684581650 -1
+  "./bibliography.bib" 1684580922 970 11b2358f92f005a9ebe45f8302d96784 ""
   "c:/texlive/2022/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1672790412 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "writeup.aux" 1684577633 795 140eac776d98443af4e7e08ebd124a2e "pdflatex"
+  "writeup.aux" 1684581649 917 ad1d1f8fabdcb7e0372e4aebee9b8831 "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1684577632 "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" "writeup.pdf" "writeup" 1684577634 0
-  "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" 1684577628 11979 7e2f08d9c9daaebe17fb72bc83b9bb46 ""
+["pdflatex"] 1684581648 "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" "writeup.pdf" "writeup" 1684581650 0
+  "c:/Users/1amaj/OneDrive/Desktop/Github/CNN-geothermal/Writeup/writeup.tex" 1684581647 12196 146e01e9e94dc813244bba3a72e4fa39 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1672790127 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1672789132 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1672789132 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -97,13 +97,15 @@
   "c:/texlive/2022/texmf.cnf" 1672792520 713 e69b156964470283e0530f5060668171 ""
   "images/basic_model.png" 1684462667 61141 d691acbfc496f3d4078233de303c2056 ""
   "images/basic_model_augmented.png" 1684463122 59774 6814dbc31a11dbf2508fa5a89dcbf07b ""
+  "images/flipped.png" 1684581605 104939 98b07051b408bd35afb743a6cc821137 ""
+  "images/gauss_blur.png" 1684581401 103443 8baf4705544ec047b317cb237ae69d1c ""
   "images/low_data.png" 1684573230 36146 d045d763ceb77c48b4d788266b2344d6 ""
   "images/model_augmented_dropout.png" 1684463108 57710 e354b6d87d973be55e1894b8f2420e15 ""
   "images/model_code.png" 1684464710 40998 b244800eeb7e2e989cf51233cf4d8f6a ""
-  "writeup.aux" 1684577633 795 140eac776d98443af4e7e08ebd124a2e "pdflatex"
-  "writeup.bbl" 1684577632 1401 90af12bf7e8547d72fddae72bc7c57e0 "bibtex writeup"
-  "writeup.out" 1684577633 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "writeup.tex" 1684577628 11979 7e2f08d9c9daaebe17fb72bc83b9bb46 ""
+  "writeup.aux" 1684581649 917 ad1d1f8fabdcb7e0372e4aebee9b8831 "pdflatex"
+  "writeup.bbl" 1684580995 1603 045b6861ed67e3564a1ed6436a1d4d9f "bibtex writeup"
+  "writeup.out" 1684581649 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "writeup.tex" 1684581647 12196 146e01e9e94dc813244bba3a72e4fa39 ""
   (generated)
   "writeup.aux"
   "writeup.log"

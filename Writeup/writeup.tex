@@ -131,11 +131,17 @@ To begin, the image data values were considered, and it was noted that many did 
 \end{center}
 
 \indent
-After normalizing all of the image data, a few different image augmentation methods were considered. Note that all data image transforms are performed inside of the training loop for each dataloader iteration, so it is difficult to determine the exact size increase for the dataset. However, because the augmentation transform was placed inside of the training loop, it was possible to train the model for more epochs without overfitting on the same exact data.\\
+After normalizing all of the image data, a few different image augmentation methods were considered, all from the torchvision.transforms library \cite{transforms}. Note that all data image transforms are performed inside of the training loop for each dataloader iteration, so it is difficult to determine the exact size increase for the dataset. However, because the augmentation transform was placed inside of the training loop, it was possible to train the model for more epochs without overfitting on the same exact data.\\
 \indent
 The first method of data augmentation was to randomly apply horizontal and vertical flips to the images. This was done to increase the data size, and to make the model more robust to different orientations of the same topography.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/flipped.png}
+\end{center}
 \indent
 Secondly, the images were rotated a random amount between 0 and 90 degrees, in another effort to increase data size and increase robustness. Random Gaussian image noise was also applied to the images, but was removed after causing performance issues with little to no accuracy benefit.\\
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/gauss_blur.png}\\
+\end{center}
 \indent
 Finally, the dataset contained some images that contained very little data. These images were negatively impacting the model's ability to learn, since they lacked the topographical structure that the model aimed to study. These images were removed from the dataset. This resulted in an average 2.3\% increase in accuracy. Examples are shown below:\\
 
@@ -157,17 +163,16 @@ Finally, the guided backpropogation analysis proved very difficult to implement.
 \section*{Approach}
 
 \indent
-The initial step in devlopment involved developing a baseline Network in Network model as described in the d2l textbook. This initial model was used to determine whether the data was being processed correctly, and to determine whether the model was capable of learning. This model was trained for 100 epochs, and overfit the data considerably: \\
+The initial step in devlopment involved creating a baseline Network in Network model as described in the d2l textbook \cite{d2l}. This initial model was used to determine whether the data was being processed correctly, and to establish a learning baseline to be built upon. This model was trained for 100 epochs, and overfit the data considerably: \\
 
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/basic_model.png}
 \end{center}
 
 \indent
-The model also did not appear to be learning very well at all. The loss function was not decreasing, and the accuracy was not increasing. This was likely due to the small data size.\\
-
+The model also did not appear to be learning very well at all. This was likely due to the small data size.\\
 \indent
-To artifically increase the data size, image augmentation was utilized via the torchvision.transforms library. This library allows for the creation of a transform object that can be applied to a dataset. The transform object contained both random flips and rotations at random degrees. The transform was applied after loading each batch at the start of the training loop, so that each batch was augmented differently. After applying the transform, the model appeared to train slightly better, but still did not appear to be learning very well:\\
+To artifically increase the data size, image augmentation was utilized via the torchvision.transforms library \cite{transforms}. This library allows for the creation of a transform object that can be applied to a dataset. The transform object contained both random flips and rotations at random degrees. The transform was applied after loading each batch at the start of the training loop, so that each batch was augmented differently. After applying the transform, the model appeared to train slightly better, but still did not appear to be learning very well:\\
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/basic_model_augmented.png}
 \end{center}
@@ -197,7 +202,7 @@ Unfortunately, the model did not have a high accuracy. The final accuracy was 37
 
 This project was an excellent introduction to image processing using convolutional neural networks. Having already developed basic models to analyze features, this project was a great way to delve deeper into more complex neural network methods. This project also involved more freedoms in regards to choice of neural network design. In the prior project, hyperparameter optimization libraries were used that made most of the experiementation unnecessary.\\
 \indent
-Additionally, this project served as a great introduction to image specific data modification methods. The torchvision.transforms library was very useful in this regard, and it was interesting to see how the data augmentation methods affected the model's ability to learn.\\
+Additionally, this project served as a great introduction to image specific data modification methods. The torchvision.transforms library \cite{transforms} was very useful in this regard, and it was interesting to see how the data augmentation methods affected the model's ability to learn.\\
 \indent
 Finally, this project was a great introduction to guided backpropogation. This method was very useful in determining which features the model was utilizing to make its predictions, and a great introduction to more advanced machine learning techniques. Tutorials such as \cite{saliency}, \cite{backprop} were invaluable for developing a better understanding on hooking the model and calculating the gradients.\\
 

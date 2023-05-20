@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  20 MAY 2023 03:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  20 MAY 2023 04:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -352,10 +352,6 @@ Package hyperref Info: Link coloring OFF on input line 101.
 \openout3 = `writeup.out'.
 
 
-
-LaTeX Warning: Citation `USGS' on page 1 undefined on input line 112.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 109--117
 
  []
@@ -368,137 +364,126 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 123.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 133--141
+Underfull \hbox (badness 10000) in paragraph at lines 133--137
 
  []
 
+<images/flipped.png, id=6, 387.69844pt x 199.49532pt>
+File: images/flipped.png Graphic file (type png)
+<use images/flipped.png>
+Package pdftex.def Info: images/flipped.png  used on input line 138.
+(pdftex.def)             Requested size: 234.8775pt x 120.86093pt.
 [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<images/low_data.png, id=15, 387.69844pt x 124.21407pt>
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+
+ []
+
+<images/gauss_blur.png, id=21, 387.69844pt x 199.49532pt>
+File: images/gauss_blur.png Graphic file (type png)
+<use images/gauss_blur.png>
+Package pdftex.def Info: images/gauss_blur.png  used on input line 143.
+(pdftex.def)             Requested size: 234.8775pt x 120.86093pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
+
+ []
+
+<images/low_data.png, id=22, 387.69844pt x 124.21407pt>
 File: images/low_data.png Graphic file (type png)
 <use images/low_data.png>
-Package pdftex.def Info: images/low_data.png  used on input line 143.
+Package pdftex.def Info: images/low_data.png  used on input line 149.
 (pdftex.def)             Requested size: 469.75502pt x 150.50606pt.
 
-
-LaTeX Warning: Citation `saliency' on page 2 undefined on input line 153.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+Overfull \vbox (6.83331pt too high) has occurred while \output is active []
+
+ [2 <./images/flipped.png> <./images/gauss_blur.png> <./images/low_data.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
-<images/basic_model.png, id=17, 523.9575pt x 395.97937pt>
+<images/basic_model.png, id=33, 523.9575pt x 395.97937pt>
 File: images/basic_model.png Graphic file (type png)
 <use images/basic_model.png>
-Package pdftex.def Info: images/basic_model.png  used on input line 163.
+Package pdftex.def Info: images/basic_model.png  used on input line 169.
 (pdftex.def)             Requested size: 234.8775pt x 177.5063pt.
 
-Overfull \vbox (6.83331pt too high) has occurred while \output is active []
-
- [2 <./images/low_data.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Underfull \hbox (badness 10000) in paragraph at lines 172--176
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--171
-
- []
-
-<images/basic_model_augmented.png, id=24, 528.47438pt x 396.7322pt>
+<images/basic_model_augmented.png, id=35, 528.47438pt x 396.7322pt>
 File: images/basic_model_augmented.png Graphic file (type png)
 <use images/basic_model_augmented.png>
-Package pdftex.def Info: images/basic_model_augmented.png  used on input line 172.
+Package pdftex.def Info: images/basic_model_augmented.png  used on input line 177.
 (pdftex.def)             Requested size: 234.8775pt x 176.32431pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Overfull \vbox (6.83331pt too high) has occurred while \output is active []
+
+ [3 <./images/basic_model.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-<images/model_augmented_dropout.png, id=25, 548.0475pt x 398.99063pt>
+<images/model_augmented_dropout.png, id=43, 548.0475pt x 398.99063pt>
 File: images/model_augmented_dropout.png Graphic file (type png)
 <use images/model_augmented_dropout.png>
-Package pdftex.def Info: images/model_augmented_dropout.png  used on input line 176.
+Package pdftex.def Info: images/model_augmented_dropout.png  used on input line 181.
 (pdftex.def)             Requested size: 234.8775pt x 170.99643pt.
 
-Overfull \vbox (6.83331pt too high) has occurred while \output is active []
-
- [3 <./images/basic_model.png> <./images/basic_model_augmented.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
 
  []
 
-<images/model_code.png, id=32, 412.54124pt x 245.41687pt>
+<images/model_code.png, id=44, 412.54124pt x 245.41687pt>
 File: images/model_code.png Graphic file (type png)
 <use images/model_code.png>
-Package pdftex.def Info: images/model_code.png  used on input line 182.
+Package pdftex.def Info: images/model_code.png  used on input line 187.
 (pdftex.def)             Requested size: 234.8775pt x 139.72803pt.
 
-LaTeX Warning: Citation `saliency' on page 4 undefined on input line 187.
-
-
-LaTeX Warning: Citation `backprop' on page 4 undefined on input line 187.
-
-
-LaTeX Warning: Citation `saliency' on page 4 undefined on input line 187.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-
-LaTeX Warning: Citation `saliency' on page 4 undefined on input line 202.
-
-
-LaTeX Warning: Citation `backprop' on page 4 undefined on input line 202.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--203
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
  []
 
 
 Overfull \vbox (6.83331pt too high) has occurred while \output is active []
 
- [4 <./images/model_augmented_dropout.png> <./images/model_code.png>] (./writeup.bbl)
+ [4 <./images/basic_model_augmented.png> <./images/model_augmented_dropout.png> <./images/model_code.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--208
+
+ []
+
+(./writeup.bbl)
 Overfull \vbox (6.83331pt too high) has occurred while \output is active []
 
  [5] (./writeup.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `writeup.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10715 strings out of 476093
- 163978 string characters out of 5795584
- 1865787 words of memory out of 5000000
- 30933 multiletter control sequences out of 15000+600000
+ 10733 strings out of 476093
+ 164339 string characters out of 5795584
+ 1864787 words of memory out of 5000000
+ 30947 multiletter control sequences out of 15000+600000
  515598 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,638b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,6n,77p,658b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on writeup.pdf (5 pages, 336952 bytes).
+Output written on writeup.pdf (5 pages, 507049 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
