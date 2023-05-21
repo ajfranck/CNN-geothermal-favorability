@@ -48,3 +48,5 @@ plt.savefig('training.png')
 
 save_path = 'MODEL/model.pth'
 torch.save(model.state_dict(), save_path)
+
+

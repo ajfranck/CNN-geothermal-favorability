@@ -152,7 +152,7 @@ Finally, the dataset contained some images that contained very little data. Thes
 \section*{Challenges}
 
 \indent
-The largest challenge of the project was the limited data size. With only 222 images, it was very difficult to make a model train properly and accurately predict labels.\\
+The largest challenge of the project was the limited data size. With only 222 images, it was very difficult to make a model train properly and accurately predict labels. Even with prior data management experience, there were some challenges with loading the data properly into the dataloaders. Originally, the goal was to apply all of the transforms before loading into a dataloader. However, this caused too many data type issues to be worthwhile, so the transform was moved inside of the training loop. Many data types still did not work properly, so everything was converted into a "torch.float64" datatype.\\
 \indent
 Additionally, the model was extremely prone to overfitting the data. To combat this, dropout was added after each Network in Network block. This helped to reduce the overfitting, however the more dropout added, the less the model seemed to learn. Unfortunately, this led to a model either overfit the data considerably, or barely learned anything at all.\\
 \indent
@@ -193,9 +193,40 @@ Saliency maps of the model were generated using guided backpropogation, followin
 
 \section*{Evaluation and Summary}
 
-Unfortunately, the model did not have a high accuracy. The final accuracy was 37\% over all four classes, and 66\% for binary classification.\\
+Unfortunately, the trained model did not perform to the level of accuracy desired. The model was able to achieve a top accuracy of 45.2\%, with a binary classification accuracy of 69.7\%. In addition, the model was not only not accuracy, it was not consistent either. The accuracy varied considerably depending on the training and validation datasets. The final validation loss varied from 1.0 to 1.4, and the accuracy was between 32 and 45\%.\\
+\indent
+Fortunately, the model was able to stay relatively consistent between both validation and test loss, after incorporating dropout. Both values stayed similar throughout the training period. \\
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        Loss Function & Value, 100 Epochs\\
+        Training Loss & 1.11 \\
+        Validation Loss & 1.23 \\
+    \end{tabular}
+\end{center}
 
 \indent
+Guided backpropogation was also used to determine which parts of each image the model was considering for its predictions. Unfortunately, because of the lack of accuracy in the model, it was difficult to determine if these regions were actually useful for the model's predictions. However, it was interesting to see that the model was utilizing the topographical features of the images to make its predictions. The saliency maps for a few classes are shown below:\\
+
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/correct_0.png}
+    \includegraphics[width=0.4\textwidth]{images/incorrect_0.png}\\
+    \includegraphics[width=0.4\textwidth]{images/correct_1.png}
+    \includegraphics[width=0.4\textwidth]{images/incorrect_1.png}\\
+    \includegraphics[width=0.4\textwidth]{images/correct_2.png}
+    \includegraphics[width=0.4\textwidth]{images/incorrect_2.png}\\
+    \includegraphics[width=0.4\textwidth]{images/correct_3.png}
+    \includegraphics[width=0.4\textwidth]{images/incorrect_3.png}\\
+\end{center}
+
+\indent
+Finally, the following is a confusion matrix fo each classification class. The model seemed to classify the 0 class the best, with the 1 class being by far the worst, with zero correct classifications. The 2 and 3 classes were very inaccurate as well. The model seemed to guess the 0 class most often. There also appeared to be a few higher residual classifications that were classified in class 0. These images could be ones that contain very little data--so it was difficult to make a prediction in the first place.\\
+\indent 
+It is not clear as to why the model classified the lower values the best. Perhaps the model was overfitting to the lower values, since they were the most common, however there was no evidence of this in the training and validation loss. Perhaps for future development, creating two seperate models for the lower and higher values would be more effective at predicting the labels.\\
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{images/confusion_matrix_final.png}
+\end{center}
 
 
 \section*{What I Learned}

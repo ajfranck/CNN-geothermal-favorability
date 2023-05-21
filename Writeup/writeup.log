@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  20 MAY 2023 04:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.3)  20 MAY 2023 21:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -431,11 +431,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-<images/model_augmented_dropout.png, id=43, 548.0475pt x 398.99063pt>
+<images/model_augmented_dropout.png, id=43, 544.28343pt x 397.485pt>
 File: images/model_augmented_dropout.png Graphic file (type png)
 <use images/model_augmented_dropout.png>
 Package pdftex.def Info: images/model_augmented_dropout.png  used on input line 181.
-(pdftex.def)             Requested size: 234.8775pt x 170.99643pt.
+(pdftex.def)             Requested size: 234.8775pt x 171.52779pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 183--185
 
@@ -455,35 +455,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--193
 Overfull \vbox (6.83331pt too high) has occurred while \output is active []
 
  [4 <./images/basic_model_augmented.png> <./images/model_augmented_dropout.png> <./images/model_code.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 196--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--208
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
-(./writeup.bbl)
+<images/correct_0.png, id=56, 315.42844pt x 321.45094pt>
+File: images/correct_0.png Graphic file (type png)
+<use images/correct_0.png>
+Package pdftex.def Info: images/correct_0.png  used on input line 212.
+(pdftex.def)             Requested size: 187.89914pt x 191.48885pt.
+<images/incorrect_0.png, id=57, 310.15875pt x 321.45094pt>
+File: images/incorrect_0.png Graphic file (type png)
+<use images/incorrect_0.png>
+Package pdftex.def Info: images/incorrect_0.png  used on input line 213.
+(pdftex.def)             Requested size: 187.89914pt x 194.74083pt.
+<images/correct_1.png, id=58, 307.90031pt x 315.42844pt>
+File: images/correct_1.png Graphic file (type png)
+<use images/correct_1.png>
+Package pdftex.def Info: images/correct_1.png  used on input line 214.
+(pdftex.def)             Requested size: 187.89914pt x 192.4977pt.
+<images/incorrect_1.png, id=59, 308.65312pt x 313.9228pt>
+File: images/incorrect_1.png Graphic file (type png)
+<use images/incorrect_1.png>
+Package pdftex.def Info: images/incorrect_1.png  used on input line 215.
+(pdftex.def)             Requested size: 187.89914pt x 191.11421pt.
+
 Overfull \vbox (6.83331pt too high) has occurred while \output is active []
 
- [5] (./writeup.aux)
+ [5 <./images/correct_0.png> <./images/incorrect_0.png>]
+<images/correct_2.png, id=66, 321.45094pt x 328.22626pt>
+File: images/correct_2.png Graphic file (type png)
+<use images/correct_2.png>
+Package pdftex.def Info: images/correct_2.png  used on input line 216.
+(pdftex.def)             Requested size: 187.89914pt x 191.86383pt.
+<images/incorrect_2.png, id=67, 320.69812pt x 320.69812pt>
+File: images/incorrect_2.png Graphic file (type png)
+<use images/incorrect_2.png>
+Package pdftex.def Info: images/incorrect_2.png  used on input line 217.
+(pdftex.def)             Requested size: 187.89914pt x 187.90369pt.
+<images/correct_3.png, id=68, 306.39468pt x 316.93407pt>
+File: images/correct_3.png Graphic file (type png)
+<use images/correct_3.png>
+Package pdftex.def Info: images/correct_3.png  used on input line 218.
+(pdftex.def)             Requested size: 187.89914pt x 194.3644pt.
+<images/incorrect_3.png, id=69, 308.65312pt x 322.20375pt>
+File: images/incorrect_3.png Graphic file (type png)
+<use images/incorrect_3.png>
+Package pdftex.def Info: images/incorrect_3.png  used on input line 219.
+(pdftex.def)             Requested size: 187.89914pt x 196.1556pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--226
+
+ []
+
+
+Overfull \vbox (6.83331pt too high) has occurred while \output is active []
+
+ [6 <./images/correct_1.png> <./images/incorrect_1.png> <./images/correct_2.png> <./images/incorrect_2.png> <./images/correct_3.png> <./images/incorrect_3.png>]
+<images/confusion_matrix_final.png, id=80, 722.7pt x 578.16pt>
+File: images/confusion_matrix_final.png Graphic file (type png)
+<use images/confusion_matrix_final.png>
+Package pdftex.def Info: images/confusion_matrix_final.png  used on input line 228.
+(pdftex.def)             Requested size: 328.82707pt x 263.0632pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
+
+ []
+
+(./writeup.bbl
+Overfull \vbox (6.83331pt too high) has occurred while \output is active []
+
+ [7 <./images/confusion_matrix_final.png>])
+Overfull \vbox (6.83331pt too high) has occurred while \output is active []
+
+ [8] (./writeup.aux)
 Package rerunfilecheck Info: File `writeup.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10733 strings out of 476093
- 164339 string characters out of 5795584
+ 10799 strings out of 476093
+ 165980 string characters out of 5795584
  1864787 words of memory out of 5000000
- 30947 multiletter control sequences out of 15000+600000
+ 31001 multiletter control sequences out of 15000+600000
  515598 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,658b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,6n,77p,688b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on writeup.pdf (5 pages, 507049 bytes).
+Output written on writeup.pdf (8 pages, 1795961 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

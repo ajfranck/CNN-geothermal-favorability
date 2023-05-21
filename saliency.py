@@ -3,7 +3,7 @@ from imports import *
 from model import *
 from dataloader import *
 
-NUMBER = 1
+NUMBER = 14
 INIT_LR = 1e-3
 
 file = h5py.File("data/DEM_train.h5", "r+")
@@ -46,6 +46,8 @@ fig, ax = plt.subplots()
 # code to plot the saliency map as a heatmap
 ax.imshow(saved_img)
 ax.imshow(torch.Tensor.cpu(saliency[0]), alpha=0.5)
+ax.axis('off')
+ax.set_title('Saliency map, incorrect prediction, Class 3')
 # plt.axis('off')
 # plt.suptitle('Saliency map, incorrect prediction')
 # plt.savefig('saliency.png')
