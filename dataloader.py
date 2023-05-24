@@ -76,6 +76,7 @@ class ImageDataset:
 
 dataset_val = ImageDataset(X_train, y_train)
 dataset_train = ImageDataset(X_valid, y_valid)
+dataset_test = ImageDataset(X_test, np.zeros(len(X_test)))
 
 #create dataloaders
 train_dataloader = torch.utils.data.DataLoader(
@@ -86,4 +87,9 @@ train_dataloader = torch.utils.data.DataLoader(
 val_dataloader = torch.utils.data.DataLoader(
     dataset = dataset_val,
     batch_size = BATCH_SIZE,
+    shuffle = True)
+
+test_dataloader = torch.utils.data.DataLoader(
+    dataset = dataset_test,
+    batch_size = 1,
     shuffle = True)

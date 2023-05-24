@@ -7,27 +7,26 @@ model = NiN(lr=0.01).to(device)
 model.load_state_dict(torch.load('MODEL/model.pth'))
 model.eval()
 
-#load test data
-file = h5py.File("data/DEM_test_features.h5", "r+")
-X_test = np.array(file["/images"])
-X_test = X_test[:,None,:,:]
-file.close()
+# #load test data
+# file = h5py.File("data/DEM_test_features.h5", "r+")
+# X_test = np.array(file["/images"])
+# X_test = X_test[:,None,:,:]
+# file.close()
 
-class ImageDataset:
-    def __init__(self, images):
-        self.X = torch.tensor(np.float32(images))
-    def __len__(self):
-        return self.X.shape[0]
-    def __getitem__(self, index):
-        return self.X[index, :, :, :]
+# class ImageDataset:
+#     def __init__(self, images):
+#         self.X = torch.tensor(np.float32(images))
+#     def __len__(self):
+#         return self.X.shape[0]
+#     def __getitem__(self, index):
+#         return self.X[index, :, :, :]
 
-dataset_test = ImageDataset(X_test)
+# dataset_test = ImageDataset(X_test)
 
-test_dataloader = torch.utils.data.DataLoader(
-    dataset = dataset_test,
-    batch_size = 1,
-    shuffle = True)
-
+# test_dataloader = torch.utils.data.DataLoader(
+#     dataset = dataset_test,
+#     batch_size = 1,
+#     shuffle = True)
 
 #test if model is correct by predicting
 dataloader = test_dataloader
@@ -38,7 +37,7 @@ saved_pred = np.zeros(size)
 
 with torch.no_grad():
     i = 0
-    for X in dataloader:
+    for X, y in dataloader:
         #save the labels
         X = X.to(device)
         pred = model(X)
